@@ -1,46 +1,29 @@
 <html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[app/app.component.ts]" value="import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ 
   selector: 'app-component',
-  template: `
-    <h1>Hello World</h1>
-  `
+  template: `<h1>Welcome to Angular 2!</h1>`
 })
 export class AppComponent implements OnInit {
-
+  
+  constructor() {  }
+  
   ngOnInit() {
 
   }
   
-}
-
-
-
-
-
-
-
-"><input type="hidden" name="files[app/app.module.ts]" value="import { NgModule }      from '@angular/core';
+}"><input type="hidden" name="files[app/app.module.ts]" value="import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpModule} from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { app_routing } from './app.routing';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule ],
+  imports:      [ BrowserModule ],
   declarations: [ AppComponent ],
   providers:    [  ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }"><input type="hidden" name="files[app/app.routing.ts]" value="import { RouterModule, Routes } from '@angular/router';
-
-const app_routes: Routes = [
-
-];
-
-export const app_routing = RouterModule.forRoot(app_routes);"><input type="hidden" name="files[app/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+export class AppModule { }"><input type="hidden" name="files[app/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 
 import { AppModule } from './app.module';
@@ -49,21 +32,6 @@ import { AppModule } from './app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .then((success: any) => console.log('App bootstrapped'))
   .catch((err: any) => console.error(err));
-"><input type="hidden" name="files[app/app.component.html]" value="<h1 [style.background]=&quot;mycolor&quot;>Hello Barcelona!</h1>
-<br />
-Color: <input type=&quot;text&quot; [(ngModel)]=&quot;mycolor&quot; />
-<br />
-<h2>{{ message }}</h2>
-<br />
-<div [innerText]=&quot;message&quot;></div>
-<br />
-Message: <input type=&quot;text&quot;  [(ngModel)]=&quot;message&quot;> {{ message }}
-<br />
-<button (click)=&quot;clickme()&quot;>Click Me</button>
-<br /><br />
-<people-list [people]=&quot;customers&quot;></people-list>
-<br /><br />
-<people-list [people]=&quot;customers&quot;></people-list>
 "><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
 <html>
   <head>
@@ -88,21 +56,28 @@ Message: <input type=&quot;text&quot;  [(ngModel)]=&quot;message&quot;> {{ messa
     <app-component>Loading...</app-component>
   </body>
 </html>
+"><input type="hidden" name="files[README.md]" value="# Angular 2 Walk-through &quot;Try It&quot; Exercise - 5 Minutes
+
+This example walks you through the fundamentals of an Angular 2 application.
+
+## Exercise Steps
+
+1. Open index.html and explore the scripts included in the head section.
+
+2. Locate the <app-component> element in the page. This acts as the 
+   root component container for the entire application.
+
+3. Open app/app.component.ts and note the following:
+   * An import statement is at the top that imports Component.
+   * A Component decorator is defined with several properties including the
+     selector for the component.
+   * A component class is defined that includes a constructor and an ngOnInit() function.
+
+4. Click on the &quot;Run&quot; button on the top Plunker bar to run the 
+   application - be amazed at the magnificence of it all. :-)
 
 
-
-
-
-
-
-
-"><input type="hidden" name="files[people.json]" value="[
-    {&quot;id&quot;: 1, &quot;name&quot;:&quot;Pau&quot;, &quot;city&quot;: &quot;Phoenix&quot;}, 
-    {&quot;id&quot;: 2, &quot;name&quot;:&quot;Alex&quot;, &quot;city&quot;: &quot;Seattle&quot;}, 
-    {&quot;id&quot;: 3, &quot;name&quot;:&quot;Jose&quot;, &quot;city&quot;: &quot;Orlando&quot;}
-]"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="starter"><input type="hidden" name="tags[3]" value="angular 2"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular 2 Example - Angular 2 Starter Template"><input type="hidden" name="files[README.md]" value="### Angular 2 Example 
-
-Angular 2 Starter Template"><input type="hidden" name="files[systemjs.config.js]" value="/**
+"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="angular 2"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular 2 Example - Angular 2 Application Walkthrough"><input type="hidden" name="files[systemjs.config.js]" value="/**
  * PLUNKER VERSION
  * (based on systemjs.config.js in angular.io)
  * System configuration for Angular 2 samples
