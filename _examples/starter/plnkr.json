@@ -1,0 +1,9 @@
+{
+  "description": "Angular 2 Starter Template",
+  "files":[
+    "!**/*.d.ts",
+    "!**/*.js",
+    "**/assets/*.js"
+  ],
+  "tags": ["starter", "angular 2"]
+}

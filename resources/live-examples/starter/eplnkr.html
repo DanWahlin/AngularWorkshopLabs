@@ -1,0 +1,181 @@
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="eplnkr"><input type="hidden" name="entries[app/app.component.ts][content]" value="import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-component',
+  template: `
+    <h1>Hello World</h1>
+  `
+})
+export class AppComponent implements OnInit {
+
+  ngOnInit() {
+
+  }
+  
+}
+
+
+
+
+
+
+
+"><input type="hidden" name="entries[app/app.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.module.ts][content]" value="import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
+
+import { AppComponent }  from './app.component';
+import { app_routing } from './app.routing';
+
+@NgModule({
+  imports:      [ BrowserModule, FormsModule, HttpModule ],
+  declarations: [ AppComponent ],
+  providers:    [  ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.routing.ts][content]" value="import { RouterModule, Routes } from '@angular/router';
+
+const app_routes: Routes = [
+
+];
+
+export const app_routing = RouterModule.forRoot(app_routes);"><input type="hidden" name="entries[app/app.routing.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/main.ts][content]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+
+import { AppModule } from './app.module';
+
+//enableProdMode(); //Uncomment for production
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(success => console.log('App bootstrapped'))
+  .catch(err => console.error(err));
+"><input type="hidden" name="entries[app/main.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.component.html][content]" value="<h1 [style.background]=&quot;mycolor&quot;>Hello Barcelona!</h1>
+<br />
+Color: <input type=&quot;text&quot; [(ngModel)]=&quot;mycolor&quot; />
+<br />
+<h2>{{ message }}</h2>
+<br />
+<div [innerText]=&quot;message&quot;></div>
+<br />
+Message: <input type=&quot;text&quot;  [(ngModel)]=&quot;message&quot;> {{ message }}
+<br />
+<button (click)=&quot;clickme()&quot;>Click Me</button>
+<br /><br />
+<people-list [people]=&quot;customers&quot;></people-list>
+<br /><br />
+<people-list [people]=&quot;customers&quot;></people-list>
+"><input type="hidden" name="entries[app/app.component.html][encoding]" value="utf8"><input type="hidden" name="entries[index.html][content]" value="<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular 2</title>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;>
+
+     <!-- Polyfill(s) for older browsers -->
+    <script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;></script>
+
+    <script src=&quot;https://unpkg.com/zone.js@0.6.17?main=browser&quot;></script>
+    <script src=&quot;https://unpkg.com/reflect-metadata@0.1.3&quot;></script>
+    <script src=&quot;https://unpkg.com/systemjs@0.19.27/dist/system.src.js&quot;></script>
+ 
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err);  });
+    </script>
+
+  <body>
+    <app-component>Loading...</app-component>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="entries[people.json][content]" value="[
+    {&quot;id&quot;: 1, &quot;name&quot;:&quot;Pau&quot;, &quot;city&quot;: &quot;Phoenix&quot;}, 
+    {&quot;id&quot;: 2, &quot;name&quot;:&quot;Alex&quot;, &quot;city&quot;: &quot;Seattle&quot;}, 
+    {&quot;id&quot;: 3, &quot;name&quot;:&quot;Jose&quot;, &quot;city&quot;: &quot;Orlando&quot;}
+]"><input type="hidden" name="entries[people.json][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="starter"><input type="hidden" name="tags[3]" value="angular 2"><input type="hidden" name="title" value="Angular 2 Example - Angular 2 Starter Template"><input type="hidden" name="source[type]" value="Angular 2 Starter Template"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[README.md][content]" value="### Angular 2 Example 
+
+Angular 2 Starter Template"><input type="hidden" name="entries[README.md][encoding]" value="utf8"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+ * PLUNKER VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular 2 samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  
+  var ng2Version = '@2.0.0-rc.6',
+      ng2RouterVersion = '@3.0.0-rc.2';
+  
+  System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      tsconfig: true
+    },
+    meta: {
+      'typescript': {
+        &quot;exports&quot;: &quot;ts&quot;
+      }
+    },
+    paths: {
+      // paths serve as alias
+      'npm:': 'https://unpkg.com/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      app: 'app',
+
+      // angular bundles
+      '@angular/core': 'npm:@angular/core' + ng2Version + '/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common' + ng2Version + '/bundles/common.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler' + ng2Version + '/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser' + ng2Version + '/bundles/platform-browser.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic' + ng2Version + '/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http' + ng2Version + '/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router' + ng2RouterVersion + '/bundles/router.umd.js',
+      '@angular/forms': 'npm:@angular/forms' + ng2Version + '/bundles/forms.umd.js',
+
+      // other libraries
+      'rxjs':                       'npm:rxjs',
+      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
+      'typescript':                 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
+
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.ts',
+        defaultExtension: 'ts'
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      },
+      'angular2-in-memory-web-api': {
+        main: './index.js',
+        defaultExtension: 'js'
+      }
+    }
+  });
+})(this);"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[tsconfig.json][content]" value="{
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;es5&quot;,
+    &quot;module&quot;: &quot;commonjs&quot;,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;sourceMap&quot;: true,
+    &quot;emitDecoratorMetadata&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;removeComments&quot;: false,
+    &quot;noImplicitAny&quot;: false,
+    &quot;suppressImplicitAnyIndexErrors&quot;: true
+  }
+}
+"><input type="hidden" name="entries[tsconfig.json][encoding]" value="utf8"></form><script>document.getElementById("mainForm").submit();</script></body></html>

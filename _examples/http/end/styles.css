@@ -1,0 +1,15 @@
+body {
+  margin-left: 10px;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.selectedCharacter {
+  color: white;
+}
+
+.data:hover {
+  background: #efefef;
+}

@@ -1,0 +1,15 @@
+<h1 [style.background]="mycolor">Hello Barcelona!</h1>
+<br />
+Color: <input type="text" [(ngModel)]="mycolor" />
+<br />
+<h2>{{ message }}</h2>
+<br />
+<div [innerText]="message"></div>
+<br />
+Message: <input type="text"  [(ngModel)]="message"> {{ message }}
+<br />
+<button (click)="clickme()">Click Me</button>
+<br /><br />
+<people-list [people]="customers"></people-list>
+<br /><br />
+<people-list [people]="customers"></people-list>

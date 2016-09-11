@@ -1,0 +1,7 @@
+**/*.map
+_examples/**/app/**/*.js
+_examples/**/api/**/*.js
+
+typings
+node_modules
+npm-debug.log

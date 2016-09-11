@@ -1,0 +1,43 @@
+<h1>Star Wars Films</h1>
+<br />
+<div *ngIf="!films">
+  Loading films...
+</div>
+<div *ngIf="films">
+  Select a movie for more details.
+</div>
+<br />
+<div class="container pull-left">
+  <div class="row bg-primary">
+    <div class="col-xs-6">Film</div>
+    <div class="col-xs-6">Episode</div>
+  </div>
+  <div class="row data" *ngFor="let film of films" (click)="selectedFilm = film">
+    <div class="col-xs-6">
+      {{ film.title }} 
+    </div>
+    <div class="col-xs-6">
+      Episode {{ film.episode_id }}
+    </div>
+  </div>
+
+  <br />
+  <div *ngIf="selectedFilm">
+    <h3>{{ selectedFilm.title }} ({{ selectedFilm.director }})</h3>
+
+    {{ selectedFilm.opening_crawl }}
+    <br /><br />
+    Characters: {{ selectedFilm.characters.length }}
+    <br />
+    Planets: {{ selectedFilm.planets.length }}
+    <br />
+    Species: {{ selectedFilm.species.length }}
+    <br />
+    Starships: {{ selectedFilm.starships.length }}
+  </div>
+
+</div>
+
+
+
+

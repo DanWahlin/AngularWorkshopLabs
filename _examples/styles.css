@@ -1,0 +1,45 @@
+body {
+    font-family: 'Open Sans'
+}
+
+main {
+    position: relative;
+    padding-top: 75px;
+}
+
+.lab {
+  padding-bottom: 40px;
+}
+
+.lab-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Bootstrap overrides */
+
+.navbar-inner {
+    border-top: 1px solid #efefef;
+    background-color: #0063AF;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-inner.toolbar {
+    background-color: #fafafa;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+.navbar-inner.footer {
+    background-color: #fafafa;
+    padding: 10px;
+}
+
+.btn {
+    width:100px;
+}

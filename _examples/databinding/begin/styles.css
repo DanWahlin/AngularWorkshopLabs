@@ -1,0 +1,12 @@
+body {
+  margin-left: 10px;
+}
+
+li {
+  cursor: pointer;
+}
+
+.selectedCharacter {
+  padding: 4px;
+  color: white;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular 2 Workshop Labs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Angular 2 Workshop Labs">
+  <meta name="viewport" content="initial-scale=1" />
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+      function link(link) {
+          location.href= link + '?cache-buster=' + Date.now();
+      }
+  </script>
+</head>
+
+<body>
+
+    <header class="navbar navbar-default navbar-inner navbar-fixed-top">
+        <nav class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <span>Angular 2 Workshop Labs</span>
+                </a>
+            </div>
+            <div class="nav-container" data-collapse="vm.isCollapsed">
+
+                <!--<ul class="nav navbar-nav nav-pills navBarPadding">
+                    <li><a href="#/customers">Customers</a></li>
+                    <li><a href="#/orders">Orders</a></li>
+                    <li><a href="#/about">About</a></li>
+                    <li id="nav-login" ng-click="vm.loginOrOut()">
+                        <a data-href="#/login">{{ vm.loginLogoutText }}</a>
+                    </li>
+                </ul>-->
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="lab">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="lab-title">Angular 2 Starter Template</span>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-success" href="starter/plnkr.no-link.html" target="blank">Open</a>
+                    </div>           
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        A "Hello World" starter Angular 2 template.
+                    </div>
+                </div>
+            </div>
+
+            <div class="lab">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="lab-title">Angular 2 Data Binding Lab</span>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-success" href="databinding/begin/plnkr.no-link.html" target="blank">Start Lab</a>
+                    </div>           
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        In this lab you'll learn how to use different data binding syntax to bind data to a view and handle events. 
+                        <br />
+                        <a href="databinding/end/plnkr.no-link.html" target="blank">Lab Solution</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lab">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="lab-title">Angular 2 Http Lab</span>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-success" href="http/begin/plnkr.no-link.html" target="blank">Start Lab</a>
+                    </div>           
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        In this lab you'll learn how to use Angular services to make Http/Ajax calls to a server and retrieve data. 
+                        <br />
+                        <a href="http/end/plnkr.no-link.html" target="blank">Lab Solution</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner footer">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="col-md-12">
+                                Created by <a href="http://twitter.com/DanWahlin" target="_blank">Dan Wahlin</a> and <a href="http://twitter.com/John_Papa" target="_blank">John Papa</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
