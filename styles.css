@@ -40,6 +40,11 @@ footer {
     padding: 10px;
 }
 
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: white;
+    background-color: transparent;
+}
+
 .btn {
     width:100px;
 }
