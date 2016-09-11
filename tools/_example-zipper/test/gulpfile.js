@@ -10,7 +10,7 @@ var _outputFolder = '_zip-output';
 gulp.task('help', taskListing);
 
 gulp.task('zipExamples', ['clean'], function() {
-  return exampleZipper.zipExamples("../../../public/docs/_examples", _outputFolder);
+  return exampleZipper.zipExamples("../../../public/docs/labs", _outputFolder);
 });
 
 gulp.task('clean', function () {

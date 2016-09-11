@@ -295,7 +295,7 @@ function resolveShredOptions(shredOptions) {
   var DOCS_FOLDER = '../../public/docs';
   var so =  _.defaults({}, shredOptions, {
     // read files from any subdir under here
-    examplesDir: path.join(DOCS_FOLDER, "_examples"),
+    examplesDir: path.join(DOCS_FOLDER, "labs"),
     // shredded files get copied here with same subdir structure.
     fragmentsDir: path.join(DOCS_FOLDER, "_fragments"),
     // whether to include subdirectories when shredding.

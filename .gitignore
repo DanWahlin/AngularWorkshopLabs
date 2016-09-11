@@ -1,6 +1,6 @@
 **/*.map
-_examples/**/app/**/*.js
-_examples/**/api/**/*.js
+labs/**/app/**/*.js
+labs/**/api/**/*.js
 
 typings
 node_modules

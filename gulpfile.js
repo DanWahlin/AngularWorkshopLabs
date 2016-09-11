@@ -25,8 +25,8 @@ var blc = require("broken-link-checker");
 var less = require('gulp-less');
 var tslint = require('gulp-tslint');
 
-// var exampleFolderPath = 'public/docs/_examples';
-var exampleFolderPathPart = '_examples';
+// var exampleFolderPath = 'public/docs/labs';
+var exampleFolderPathPart = 'labs';
 
 // TODO:
 //  1. Think about using runSequence
@@ -41,8 +41,8 @@ var TEMP_PATH = './_temp';
 // var DOCS_PATH = path.join(PUBLIC_PATH, 'docs');
 var DOCS_PATH = path.join('');
 
-// var EXAMPLES_PATH = path.join(DOCS_PATH, 'examples');
-var EXAMPLES_PATH = path.join(PUBLIC_PATH, '_examples');
+// var EXAMPLES_PATH = path.join(DOCS_PATH, 'labs');
+var EXAMPLES_PATH = path.join(PUBLIC_PATH, 'labs');
 var EXAMPLES_PROTRACTOR_PATH = path.join(EXAMPLES_PATH, '_protractor');
 var NOT_API_DOCS_GLOB = path.join(PUBLIC_PATH, './{docs/*/latest/!(api),!(docs)}/**/*.*');
 var RESOURCES_PATH = path.join(PUBLIC_PATH, 'resources');
@@ -60,7 +60,7 @@ if (isSilent) gutil.log = gutil.noop;
 const _dgeniLogLevel = argv.dgeniLog || (isSilent ? 'error' : 'info');
 
 var _devguideShredOptions =  {
-  examplesDir: path.join(DOCS_PATH, '_examples'),
+  examplesDir: path.join(DOCS_PATH, 'labs'),
   fragmentsDir: path.join(DOCS_PATH, '_fragments'),
   zipDir: path.join(RESOURCES_PATH, 'zips'),
   logLevel: _dgeniLogLevel
@@ -197,7 +197,7 @@ function runE2e() {
     var spawnInfo = spawnExt('npm', ['install'], { cwd: EXAMPLES_PROTRACTOR_PATH});
     promise = spawnInfo.promise
       .then(function() {
-        gutil.log('runE2e: install _examples stuff');
+        gutil.log('runE2e: install labs stuff');
         spawnInfo = spawnExt('npm', ['install'], { cwd: EXAMPLES_PATH})
         return spawnInfo.promise;
       })
@@ -225,7 +225,7 @@ function runE2e() {
   return promise;
 }
 
-// finds all of the *e2e-spec.tests under the _examples folder along
+// finds all of the *e2e-spec.tests under the labs folder along
 // with the corresponding apps that they should run under. Then run
 // each app/spec collection sequentially.
 function findAndRunE2eTests(filter, outputFile) {
@@ -458,7 +458,7 @@ gulp.task('_copy-example-boilerplate', function (done) {
 });
 
 //Builds Angular 2 Docs CSS file from Bootstrap npm LESS source
-//and copies the result to the _examples folder to be included as
+//and copies the result to the labs folder to be included as
 //part of the example boilerplate.
 function buildStyles(cb, done){
   gulp.src(path.join(STYLES_SOURCE_PATH, _styleLessName))
@@ -470,7 +470,7 @@ function buildStyles(cb, done){
 
 // copies boilerplate files to locations
 // where an example app is found
-// also copies certain web files (e.g., styles.css) to ~/_examples/**/dart/**/web
+// also copies certain web files (e.g., styles.css) to ~/labs/**/dart/**/web
 function copyExampleBoilerplate() {
   gutil.log('Copying example boilerplate files');
   var sourceFiles = _exampleBoilerplateFiles.map(function(fn) {
@@ -491,7 +491,7 @@ function copyExampleBoilerplate() {
     // .then(function() {
     //   return copyFiles(dartWebSourceFiles, dartExampleWebPaths, destFileMode);
     // })
-    // copy certain files from _examples/_protractor dir to each subdir that contains an e2e-spec file.
+    // copy certain files from labs/_protractor dir to each subdir that contains an e2e-spec file.
     // .then(function() {
     //   var protractorSourceFiles =
     //     _exampleProtractorBoilerplateFiles
@@ -971,7 +971,7 @@ function linkChecker(options) {
 
 // harp has issues with node_modules under the public dir
 // but we need them there for example testing and development
-// this method allows the node modules folder under '_examples'
+// this method allows the node modules folder under 'labs'
 // to be temporarily moved out from under 'public' while harp
 // compilation is occurring.
 function showHideExampleNodeModules(showOrHide) {
@@ -1181,7 +1181,7 @@ function devGuideSharedJadeWatch(shredOptions, postShredAction) {
   // removed this version because gulp.watch has the same glob issue that dgeni has.
   // var excludePattern = '!' + path.join(shredOptions.jadeDir, '**/node_modules/**/*.*');
   // gulp.watch([includePattern, excludePattern], {readDelay: 500}, function (event, done) {
-  var ignoreThese = [ '**/node_modules/**', '**/_examples/**', '**/_fragments/**', '**/latest/api/**' ];
+  var ignoreThese = [ '**/node_modules/**', '**/labs/**', '**/_fragments/**', '**/latest/api/**' ];
   var files = globby.sync( [includePattern], { ignore: ignoreThese});
   gulp.watch([files], {readDelay: 500}, function (event, done) {
     gutil.log('Dev Guide jade file changed')
@@ -1480,232 +1480,3 @@ function renameIfExistsSync(oldPath, newPath) {
     gutil.log(`renameIfExistsSync cannot find file to rename: ${oldPath}`);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///////////////////////
-// var gulp = require('gulp');
-// var gutil = require('gulp-util');
-// var taskListing = require('gulp-task-listing');
-// var path = require('canonical-path');
-
-// var _ = require('lodash');
-// var fsExtra = require('fs-extra');
-// var fs = fsExtra;
-// var globby = require("globby");
-// var Minimatch = require("minimatch").Minimatch;
-// var Q = require("q");
-
-// var TOOLS_PATH = './tools';
-// // var EXAMPLES_PATH = path.join('./', '');
-// var EXAMPLES_PATH = path.join('./', 'examples');
-// // var PUBLIC_PATH = './plunker';
-// // var RESOURCES_PATH = path.join(PUBLIC_PATH, 'resources');
-// // var LIVE_EXAMPLES_PATH = path.join(RESOURCES_PATH, 'live-examples');
-// var LIVE_EXAMPLES_PATH = path.join('./', 'live-examples');
-// // var LIVE_EXAMPLES_PATH = undefined;
-// var TEMP_PATH = './_temp';
-
-// var fsUtils = require(path.resolve(TOOLS_PATH, 'fs-utils/fsUtils'));
-
-// // vardocs docShredder = require(path.resolve(TOOLS_PATH, 'doc-shredder/doc-shredder'));
-// var plunkerBuilder = require(path.resolve(TOOLS_PATH, 'plunker-builder/plunkerBuilder'));
-
-// var _exampleBoilerplateFiles = [
-//   '.editorconfig',
-//   // 'karma.conf.js',
-//   // 'karma-test-shim.js',
-//   'package.json',
-//   // 'styles.css',
-//   'system-config.ts',
-//   'tsconfig.json',
-//   'tslint.json',
-//   'typings.d.ts',
-//   'typings.json',
-//   // 'wallaby.js'
-//  ];
-
-// gulp.task('default', ['help']);
-
-// gulp.task('help', taskListing.withFilters(function (taskName) {
-//   var isSubTask = taskName.substr(0, 1) == "_";
-//   return isSubTask;
-// }, function (taskName) {
-//   var shouldRemove = taskName === 'default';
-//   return shouldRemove;
-// }));
-
-// gulp.task('build-plunkers', function() {
-//   return copyExampleBoilerplate()
-//     .then(function() {
-//       return plunkerBuilder.buildPlunkers(EXAMPLES_PATH, LIVE_EXAMPLES_PATH, { errFn: gutil.log });
-//     });
-// });
-
-// // requires admin access
-// gulp.task('add-example-boilerplate', function() {
-//   var realPath = path.join(EXAMPLES_PATH, '/node_modules');
-//   var nodeModulesPaths = getNodeModulesPaths(EXAMPLES_PATH);
-
-//   nodeModulesPaths.forEach(function(linkPath) {
-//     gutil.log("symlinking " + linkPath + ' -> ' + realPath)
-//     fsUtils.addSymlink(realPath, linkPath);
-//   });
-
-//   realPath = path.join(EXAMPLES_PATH, '/typings');
-//   var typingsPaths = getTypingsPaths(EXAMPLES_PATH);
-//   typingsPaths.forEach(function(linkPath) {
-//     gutil.log("symlinking " + linkPath + ' -> ' + realPath)
-//     fsUtils.addSymlink(realPath, linkPath);
-//   });
-
-//   return copyExampleBoilerplate();
-// });
-
-// gulp.task('remove-example-boilerplate', function() {
-//   var nodeModulesPaths = getNodeModulesPaths(EXAMPLES_PATH);
-//   nodeModulesPaths.forEach(function(linkPath) {
-//     fsUtils.removeSymlink(linkPath);
-//   });
-
-//   var typingsPaths = getTypingsPaths(EXAMPLES_PATH);
-//   typingsPaths.forEach(function(linkPath) {
-//     fsUtils.removeSymlink(linkPath);
-//   });
-
-//   var examplePaths = getExamplePaths(EXAMPLES_PATH);
-
-//   return deleteFiles(_exampleBoilerplateFiles, examplePaths)
-//     .then(function() {
-//       var e2eSpecPaths = getE2eSpecPaths(EXAMPLES_PATH);
-//       return deleteFiles(['protractor.config.js'], e2eSpecPaths);
-//     })
-// });
-
-// ////////////////////
-
-
-// // copies boilerplate files to locations
-// // where an example app is found
-// // also copies certain web files (e.g., styles.css) to ~/_examples/**/dart/**/web
-// // also copies protractor.config.js file
-// function copyExampleBoilerplate() {
-//   var sourceFiles = _exampleBoilerplateFiles.map(function(fn) {
-//     return path.join(EXAMPLES_PATH, fn);
-//   });
-//   var examplePaths = getExamplePaths(EXAMPLES_PATH);
-
-//   return copyFiles(sourceFiles, examplePaths)
-//     // copy protractor.config.js from _examples dir to each subdir that
-//     // contains a e2e-spec file.
-//     .then(function() {
-//       var sourceFiles = [ path.join(EXAMPLES_PATH, 'protractor.config.js') ];
-//       var e2eSpecPaths = getE2eSpecPaths(EXAMPLES_PATH);
-//       return copyFiles(sourceFiles, e2eSpecPaths);
-//     });
-// }
-
-
-// // TODO: filter out all paths that are subdirs of another
-// // path in the result.
-// function getE2eSpecPaths(basePath) {
-//   var paths = getPaths(basePath, '*e2e-spec.js', true);
-//   return _.uniq(paths);
-// }
-
-// // copies boilerplate files to locations
-// // where an example app is found
-// // also copies protractor.config.js file
-// function copyExampleBoilerplate() {
-//   var sourceFiles = _exampleBoilerplateFiles.map(function (fn) {
-//     return path.join(EXAMPLES_PATH, fn);
-//   });
-//   var examplePaths = getExamplePaths(EXAMPLES_PATH);
-//   // copies protractor.config.js from _examples dir to each subdir that
-//   // contains a e2e-spec file.
-//   return copyFiles(sourceFiles, examplePaths).then(function () {
-//     var sourceFiles = [path.join(EXAMPLES_PATH, 'protractor.config.js')];
-//     var e2eSpecPaths = getE2eSpecPaths(EXAMPLES_PATH);
-//     return copyFiles(sourceFiles, e2eSpecPaths);
-//   });
-// }
-
-// function getNodeModulesPaths(basePath) {
-//   var paths = getExamplePaths(basePath).map(function (examplePath) {
-//     return path.join(examplePath, "/node_modules");
-//   });
-//   return paths;
-// }
-
-// function getTypingsPaths(basePath) {
-//   var paths = getExamplePaths(basePath).map(function (examplePath) {
-//     return path.join(examplePath, "/typings");
-//   });
-//   return paths;
-// }
-
-// function getExamplePaths(basePath, includeBase) {
-//   // includeBase defaults to false
-//   return getPaths(basePath, "example-config.json", includeBase)
-// }
-
-// function getPaths(basePath, filename, includeBase) {
-//   var filenames = getFilenames(basePath, filename, includeBase);
-//   var paths = filenames.map(function (fileName) {
-//     return path.dirname(fileName);
-//   });
-//   return paths;
-// }
-
-// function getFilenames(basePath, filename, includeBase) {
-//   // includeBase defaults to false
-//   var includePatterns = [path.join(basePath, "**/" + filename)];
-//   if (!includeBase) {
-//     // ignore (skip) the top level version.
-//     includePatterns.push("!" + path.join(basePath, "/" + filename));
-//   }
-//   var nmPattern = path.join(basePath, "**/node_modules/**");
-//   var filenames = globby.sync(includePatterns, { ignore: [nmPattern] });
-//   return filenames;
-// }
-
-// // returns a promise
-// function copyFiles(fileNames, destPaths) {
-//   var copy = Q.denodeify(fsExtra.copy);
-//   var copyPromises = [];
-//   destPaths.forEach(function (destPath) {
-//     fileNames.forEach(function (fileName) {
-//       var baseName = path.basename(fileName);
-//       var destName = path.join(destPath, baseName);
-//       var p = copy(fileName, destName, { clobber: true });
-//       copyPromises.push(p);
-//     });
-//   });
-//   return Q.all(copyPromises);
-// }
-
-// function deleteFiles(baseFileNames, destPaths) {
-//   var remove = Q.denodeify(fsExtra.remove);
-//   var delPromises = [];
-//   destPaths.forEach(function (destPath) {
-//     baseFileNames.forEach(function (baseFileName) {
-//       var destFileName = path.join(destPath, baseFileName);
-//       var p = remove(destFileName);
-//       delPromises.push(p);
-//     });
-//   });
-//   return Q.all(delPromises);
-// }
