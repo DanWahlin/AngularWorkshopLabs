@@ -111,9 +111,9 @@ li {
      <!-- Polyfill(s) for older browsers -->
     <script src=&quot;//unpkg.com/core-js/client/shim.min.js&quot;></script>
 
-    <script src=&quot;//unpkg.com/zone.js@0.6.17?main=browser&quot;></script>
-    <script src=&quot;//unpkg.com/reflect-metadata@0.1.3&quot;></script>
-    <script src=&quot;//unpkg.com/systemjs@0.19.27/dist/system.src.js&quot;></script>
+    <script src=&quot;//unpkg.com/zone.js@0.6.25?main=browser&quot;></script>
+    <script src=&quot;//unpkg.com/reflect-metadata@0.1.8&quot;></script>
+    <script src=&quot;//unpkg.com/systemjs@0.19.38/dist/system.src.js&quot;></script>
  
     <script src=&quot;systemjs.config.js&quot;></script>
     <script>
@@ -156,8 +156,8 @@ This example provides a look at Angular 2 data binding syntax in templates.
  */
 (function (global) {
   
-  var ng2Version = '@2.0.0-rc.6',
-      ng2RouterVersion = '@3.0.0-rc.2';
+  var ng2Version = '@2.0.1',
+      ng2RouterVersion = '@3.0.1';
   
   System.config({
     // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
@@ -192,8 +192,8 @@ This example provides a look at Angular 2 data binding syntax in templates.
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript':                 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
+      'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
+      'typescript':                 'npm:typescript@2.0.3/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension

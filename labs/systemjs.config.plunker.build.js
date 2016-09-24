@@ -6,8 +6,8 @@
  */
 (function (global) {
   
-  var ng2Version = '@2.0.0-rc.6',
-      ng2RouterVersion = '@3.0.0-rc.2';
+  var ng2Version = '@2.0.1',
+      ng2RouterVersion = '@3.0.1';
   
   System.config({
     // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
@@ -42,8 +42,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript':                 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
+      'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
+      'typescript':                 'npm:typescript@2.0.3/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension
