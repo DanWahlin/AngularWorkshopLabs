@@ -1,0 +1,62 @@
+<!--
+   Angular 2 Routing
+   Dan Wahlin
+   @DanWahlin
+   http://blog.codewithdan.com
+   http://github.com/danwahlin
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <title>Angular 2 Routes</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Angular 2 Routes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    
+    <!-- Polyfill(s) for older browsers -->
+    <script src="//unpkg.com/core-js/client/shim.min.js"></script>
+
+    <script src="//unpkg.com/zone.js@0.6.25?main=browser"></script>
+    <script src="//unpkg.com/reflect-metadata@0.1.8"></script>
+    <script src="//unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+
+	<script src="systemjs.config.js"></script>
+	<script>
+		System.import('app').catch(function(err){ console.error(err); });
+	</script>
+    
+</head>
+<body>
+    <header class="navbar navbar-inner navbar-fixed-top">
+        <nav class="container">
+            <div class="navbar-header">
+              <span class="app-title">Angular 2 Routing</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <app-container>
+            Loading...
+        </app-container>
+        <br /><br />
+    </main>
+
+    <footer>
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner footer">
+                <div class="container">
+                    <footer>
+                        
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
