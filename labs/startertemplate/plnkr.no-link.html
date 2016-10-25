@@ -26,7 +26,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule} from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { app_routing } from './app.routing';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule ],
@@ -34,13 +33,7 @@ import { app_routing } from './app.routing';
   providers:    [  ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }"><input type="hidden" name="files[app/app.routing.ts]" value="import { RouterModule, Routes } from '@angular/router';
-
-const app_routes: Routes = [
-
-];
-
-export const app_routing = RouterModule.forRoot(app_routes);"><input type="hidden" name="files[app/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+export class AppModule { }"><input type="hidden" name="files[app/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 
 import { AppModule } from './app.module';
@@ -49,22 +42,7 @@ import { AppModule } from './app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .then((success: any) => console.log('App bootstrapped'))
   .catch((err: any) => console.error(err));
-"><input type="hidden" name="files[app/app.component.html]" value="<h1 [style.background]=&quot;mycolor&quot;>Hello Barcelona!</h1>
-<br />
-Color: <input type=&quot;text&quot; [(ngModel)]=&quot;mycolor&quot; />
-<br />
-<h2>{{ message }}</h2>
-<br />
-<div [innerText]=&quot;message&quot;></div>
-<br />
-Message: <input type=&quot;text&quot;  [(ngModel)]=&quot;message&quot;> {{ message }}
-<br />
-<button (click)=&quot;clickme()&quot;>Click Me</button>
-<br /><br />
-<people-list [people]=&quot;customers&quot;></people-list>
-<br /><br />
-<people-list [people]=&quot;customers&quot;></people-list>
-"><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
+"><input type="hidden" name="files[app/app.component.html]" value=""><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
 <html>
   <head>
     <title>Angular 2</title>
