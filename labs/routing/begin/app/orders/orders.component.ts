@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+//*** TODO: Import ActivatedRoute from @angular/router
+
 
 import { DataService } from '../shared/data.service';
 import { IOrder } from '../shared/interfaces';
@@ -13,10 +14,22 @@ export class OrdersComponent implements OnInit {
 
     orders: IOrder[];
 
-    constructor(private route: ActivatedRoute, private dataService: DataService) { }
+    /*** 
+        TODO: Inject ActivatedRoute into the constructor. 
+              Give it a name of "route" and make it private.
+    ***/
+    constructor(private dataService: DataService) { }
 
     ngOnInit() { 
-        const id = +this.route.snapshot.params['customerId'];
+        /***
+            TODO: 1. Grab the customerId route parameter value using
+                     this.route.snapshot.params['customerId'] 
+
+                  2. Convert the route parameter value to an integer 
+                     and assign it to the id constant below.
+        ***/
+
+        const id = 
         this.dataService.getOrders(id)
             .subscribe((orders: IOrder[]) => {
                 this.orders = orders;

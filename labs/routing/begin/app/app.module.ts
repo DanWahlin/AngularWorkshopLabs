@@ -6,11 +6,13 @@ import { HttpModule} from '@angular/http';
 import { AppComponent }  from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { OrdersComponent } from './orders/orders.component';
-import { app_routing } from './app.routing';
 import { DataService } from './shared/data.service';
+//*** TODO: Import app_routing from app.routing.ts
 
+
+//*** TODO: Add the app_routing object into into the imports array
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, app_routing ],
+  imports:      [ BrowserModule, FormsModule, HttpModule ],
   declarations: [ AppComponent, CustomersComponent, OrdersComponent ],
   providers:    [ DataService ],
   bootstrap:    [ AppComponent ]
