@@ -33,7 +33,7 @@
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
-      'typescript':                 'npm:typescript@2.0.3/lib/typescript.js',
+      'typescript':                 'npm:typescript@2.0.6/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension

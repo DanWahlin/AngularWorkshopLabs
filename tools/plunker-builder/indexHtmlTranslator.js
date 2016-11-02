@@ -56,7 +56,7 @@ var _rxData = [
   {
     pattern: 'script',
     from: 'node_modules/systemjs/dist/system.src.js',
-    to:   'https://npmcdn.com/systemjs@0.19.38/dist/system.src.js'
+    to:   'https://npmcdn.com/systemjs@0.19.40/dist/system.src.js'
   },
   {
     pattern: 'script',
