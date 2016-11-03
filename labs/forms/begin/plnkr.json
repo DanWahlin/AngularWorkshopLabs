@@ -1,0 +1,9 @@
+{
+  "description": "Angular 2 Template Forms Lab",
+  "files":[
+    "!**/*.d.ts",
+    "!**/*.js",
+    "**/assets/*.js"
+  ],
+  "tags": ["http", "observables", "rxjx", "angular 2"]
+}
