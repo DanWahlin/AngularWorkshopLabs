@@ -277,19 +277,17 @@ input.ng-valid, select.ng-valid {
     <link href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; />
     <link href=&quot;styles/styles.css&quot; rel=&quot;stylesheet&quot; />
     
-    <!-- Polyfill(s) for older browsers -->
-    <script src=&quot;https://npmcdn.com/core-js/client/shim.min.js&quot;></script>
+     <!-- Polyfill(s) for older browsers -->
+    <script src=&quot;//unpkg.com/core-js/client/shim.min.js&quot;></script>
 
-    <script src=&quot;https://npmcdn.com/zone.js@0.6.12?main=browser&quot;></script>
-    <script src=&quot;https://npmcdn.com/reflect-metadata@0.1.3&quot;></script>
-    <script src=&quot;https://npmcdn.com/systemjs@0.19.40/dist/system.src.js&quot;></script>
-
-	<!-- remove for bundle usage -->
-	<script src=&quot;systemjs.config.js&quot;></script>
-	<script>
-		System.import('app').catch(function(err){ console.error(err); });
-	</script>
-	<!-- remove for bundle usage -->
+    <script src=&quot;//unpkg.com/zone.js@0.6.26?main=browser&quot;></script>
+    <script src=&quot;//unpkg.com/reflect-metadata@0.1.8&quot;></script>
+    <script src=&quot;//unpkg.com/systemjs@0.19.40/dist/system.src.js&quot;></script>
+ 
+    <script src=&quot;systemjs.config.js&quot;></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err);  });
+    </script>
     
 </head>
 <body>
@@ -305,16 +303,13 @@ input.ng-valid, select.ng-valid {
             <div class=&quot;navbar-inner footer&quot;>
                 <div class=&quot;container&quot;>
                     <footer>
-                        <a href=&quot;http://twitter.com/danwahlin&quot;>Created by @DanWahlin</a>
+                     
                     </footer>
                 </div>
             </div>
         </div>
     </footer>
-    
-   	<!-- add for bundle usage -->
-	<!-- <script src=&quot;dist/bundle.min.js&quot;></script> -->
-	<!-- add for bundle usage -->
+
     
 </body>
 </html>
