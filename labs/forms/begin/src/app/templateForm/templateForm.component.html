@@ -1,0 +1,73 @@
+<div class="container">
+  <div *ngIf="!submitted">
+    <h1>Template Driven Form</h1>
+        <!-- ***
+           TODO: Perform the following tasks to the <form> tag below:
+                 1. Bind ngSubmit to the component's onSubmit() function using event binding syntax.
+                 2. Add a local template variable named "heroForm" and assign it a value of "ngForm".
+        *** -->
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <!-- ***
+           TODO: Perform the following tasks to the <input> tag below:
+                 1. Add a name attribute and assign it a value of "name".
+                 2. Add a local template variable named "name" and assign it a value of "ngModel".
+                 3. Bind the ngModel directive to the model.name property using [()] binding.
+                 4. Add the HTML5 required attribute.
+        *** -->
+        <input type="text" class="form-control">
+        <!-- ***
+           TODO: Hide the following <div> if the local template "name" variable's' valid property is false 
+                 (Hint: Use property binding to show/hide the div using the hidden property or use *ngIf)
+        *** -->
+        <div class="alert alert-danger">Name is required</div>
+      </div>
+      <div class="form-group">
+        <label for="alterEgo">Address</label>
+        <!-- ***
+           TODO: Perform the following tasks to the <input> tag below:
+                 1. Add a name attribute and assign it a value of "address".
+                 2. Add a local template variable named "address" and assign it a value of "ngModel".
+                 3. Bind the ngModel directive to the model.address property property using [()] binding
+                 4. Add the HTML5 required attribute.
+        *** -->
+        <input type="text" class="form-control">
+
+        <!-- ***
+           TODO: Hide the following <div> if the local template "address" variable's valid property is false 
+                 (Hint: Use property binding to show/hide the div using the hidden property or use *ngIf)
+        *** -->
+        <div class="alert alert-danger">Address is required</div>
+      </div>
+      <div class="form-group">
+        <label for="power">State</label>
+        <select class="form-control" name="state" #state="ngModel" [(ngModel)]="model.state" required>
+          <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+        </select>
+        <div class="alert alert-danger" [hidden]="state.valid">State is required</div>
+      </div>
+        <!-- ***
+           TODO: Disable the button if the heroForm.valid property is false. (Hint: use property binding to disable the button).
+        *** -->
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-md-2">Name</div>
+      <div class="col-md-10 pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">Address</div>
+      <div class="col-md-10 pull-left">{{ model.address }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">State</div>
+      <div class="col-md-10 pull-left">{{ model.state }}</div>
+    </div>
+    <br />
+    <button class="btn btn-default" (click)="submitted=false">Edit</button>
+  </div>
+</div>

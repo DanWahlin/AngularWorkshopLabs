@@ -1,0 +1,61 @@
+<!--
+   Angular 2 Forms
+   Dan Wahlin
+
+   @DanWahlin
+   http://blog.codewithdan.com
+   http://github.com/danwahlin
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <title>Angular 2 Forms</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Angular 2 Bare Bones Starter">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+	<!-- remove for bundle usage -->
+	<script src="systemjs.config.js"></script>
+	<script>
+		System.import('app').catch(function(err){ console.error(err); });
+	</script>
+	<!-- remove for bundle usage -->
+    
+</head>
+<body>
+    <div class="container">
+        <app-container>
+            Loading...
+        </app-container>
+        <br /><br />
+    </div>
+
+    <footer>
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner footer">
+                <div class="container">
+                    <footer>
+                        <a href="http://twitter.com/danwahlin">Created by @DanWahlin</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+   	<!-- add for bundle usage -->
+	<!-- <script src="dist/bundle.min.js"></script> -->
+	<!-- add for bundle usage -->
+    
+</body>
+</html>
