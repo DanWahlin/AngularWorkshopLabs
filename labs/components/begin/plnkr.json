@@ -1,0 +1,9 @@
+{
+  "description": "Angular 2 Components",
+  "files":[
+    "!**/*.d.ts",
+    "!**/*.js",
+    "**/assets/*.js"
+  ],
+  "tags": ["angular 2"]
+}

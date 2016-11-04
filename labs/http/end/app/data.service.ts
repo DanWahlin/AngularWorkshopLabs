@@ -31,8 +31,17 @@ export class DataService {
   }
   
   private handleError(error: any) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+      console.error('server error:', error); 
+      if (error instanceof Response) {
+        let errMessage = '';
+        try {
+          errMessage = error.json().error;
+        } catch(err) {
+          errMessage = error.statusText;
+        }
+        return Observable.throw(errMessage);
+      }
+      return Observable.throw(error || 'Server Error!!');
   }
   
 }
