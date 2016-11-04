@@ -75,8 +75,17 @@ export class DataService {
   }
   
   private handleError(error: any) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+      console.error('server error:', error); 
+      if (error instanceof Response) {
+        let errMessage = '';
+        try {
+          errMessage = error.json().error;
+        } catch(err) {
+          errMessage = error.statusText;
+        }
+        return Observable.throw(errMessage);
+      }
+      return Observable.throw(error || 'Server Error!!');
   }
   
 }"><input type="hidden" name="files[app/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -222,7 +231,7 @@ export class Sorter {
   </body>
 </html>"><input type="hidden" name="files[README.md]" value="# Angular 2 Services and Http &quot;Try It&quot; Exercise - 15 Minutes
 
-This example shows how Http can be used in services to retrieve 
+This example shows how Http can be used in services to retrieve
 remote data from a server.
 
 ## Steps
@@ -246,8 +255,32 @@ return this.http.get(this.url + 'films')
     this.films = films;
   });
 ```
-6. Press the **Run** button on the Plunker toolbar to try out the application! A list of 
-   Star Wars films should be displayed. Click a movie to get more details about it."><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="observables"><input type="hidden" name="tags[4]" value="rxjx"><input type="hidden" name="tags[5]" value="angular 2"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular 2 Example - Angular 2 Http and Observables Lab"><input type="hidden" name="files[systemjs.config.js]" value="/**
+6. Press the **Run** button on the Plunker toolbar to try out the application! A list of
+   Star Wars films should be displayed. Click a movie to get more details about it.
+
+
+   # Angular 2 Data Binding Fundamentals &quot;Try It&quot; Exercise - 15 Minutes
+
+This example provides a look at Angular 2 data binding syntax in templates.
+
+## Bonus
+
+**Use the Async Pipe**
+
+1. Remove the subscribe in the `AppComponent`
+
+2. Set the films property in the `AppComponent` to the return value of  `this.dataService.getFilms()`
+```
+this.films = this.dataService.getFilms();
+```
+
+3. Add the async pipe to the template's *ngFor
+
+```
+*ngFor=&quot;let film of films | async&quot;
+```
+
+"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="observables"><input type="hidden" name="tags[4]" value="rxjx"><input type="hidden" name="tags[5]" value="angular 2"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular 2 Example - Angular 2 Http and Observables Lab"><input type="hidden" name="files[systemjs.config.js]" value="/**
  * PLUNKER VERSION
  * (based on systemjs.config.js in angular.io)
  * System configuration for Angular 2 samples

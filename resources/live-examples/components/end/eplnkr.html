@@ -1,29 +1,66 @@
-<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="eplnkr"><input type="hidden" name="entries[app/app.component.ts][content]" value="import { Component, OnInit } from '@angular/core';
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="https://embed.plnkr.co?show=preview" target="eplnkr"><input type="hidden" name="entries[app/app.component.ts][content]" value="//*** TODO: Import Component from @angular/core
+import { Component } from '@angular/core';
 
+/*** 
+  TODO: Add an @Component decorator that has the following properties:
+        
+        selector: 'app-component'
+        template: '<h1>App Component</h1><br />'
+
+***/
 @Component({ 
   selector: 'app-component',
-  template: `<h1>Welcome to Angular 2!</h1>`
+  template: `
+    <h1>App Component!</h1>
+    <br />
+    <child-component></child-component>
+  `
 })
-export class AppComponent implements OnInit {
-  
-  constructor() {  }
-  
-  ngOnInit() {
-
-  }
+//*** TODO: Create an AppComponent class (make sure that you &quot;export&quot; the class)
+export class AppComponent  {
   
 }"><input type="hidden" name="entries[app/app.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/app.module.ts][content]" value="import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//*** TODO: Import AppComponent and ChildComponent
 import { AppComponent }  from './app.component';
+import { ChildComponent } from './child.component';
 
+/*** 
+  TODO: Register the Components with the Angular Module
+
+        1. Add the AppComponent and ChildComponent symbols 
+           into the declarations property array.
+        2. Add AppComponent into the boostrap property array.
+
+***/
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, ChildComponent ],
   providers:    [  ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/main.ts][content]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+export class AppModule { }"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/child.component.ts][content]" value="//*** TODO: Import Component from @angular/core
+import { Component } from '@angular/core';
+
+/*** 
+  TODO: Add an @Component decorator that has the following properties:
+        
+        selector: 'child-component'
+        template: '<h2>App Component</h2>'
+
+***/
+@Component({
+    selector: 'child-component',
+    template: `
+        <h2>Child Component</h2>
+    `
+})
+//*** TODO: Create a ChildComponent class (make sure that you &quot;export&quot; the class)
+export class ChildComponent {
+
+
+}"><input type="hidden" name="entries[app/child.component.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/main.ts][content]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app.module';
 
@@ -54,28 +91,34 @@ platformBrowserDynamic().bootstrapModule(AppModule)
     <app-component>Loading...</app-component>
   </body>
 </html>
-"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="entries[README.md][content]" value="# Angular 2 Walk-through &quot;Try It&quot; Exercise - 5 Minutes
+"><input type="hidden" name="entries[index.html][encoding]" value="utf8"><input type="hidden" name="entries[README.md][content]" value="# Angular 2 Components &quot;Try It&quot; Exercise - 15 Minutes
 
-This example walks you through the fundamentals of an Angular 2 application.
+This example walks you through the process of creating Angular 2 Components
+and adding them to a module.
 
 ## Exercise Steps
 
-1. Open index.html and explore the scripts included in the head section.
+1. Open **app/app.component.ts** and perform the TODO tasks in the file.
 
-2. Locate the <app-component> element in the page. This acts as the 
-   root component container for the entire application.
+2. Open **app/child.component.ts** and perform the TODO tasks in the file.
 
-3. Open app/app.component.ts and note the following:
-   * An import statement is at the top that imports Component.
-   * A Component decorator is defined with several properties including the
-     selector for the component.
-   * A component class is defined that includes a constructor and an ngOnInit() function.
+3. Go back to **app/app.component.ts** and add the following tag into its template
+   immediately after the existing <br /> tag:
 
-4. Click on the &quot;Run&quot; button on the top Plunker bar to run the 
-   application - be amazed at the magnificence of it all. :-)
+   <child-component></child-component>
+
+4. Open **app/app.module.ts** and perform the TODO tasks in the file.
+
+5. Open **index.html** and note that <app-component> is defined in it.
+
+6. Click on the &quot;Run&quot; button on the top Plunker bar to run the 
+   application. You should see output from the app component and the child component.
 
 
-"><input type="hidden" name="entries[README.md][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="angular 2"><input type="hidden" name="title" value="Angular 2 Example - Angular 2 Application Walkthrough"><input type="hidden" name="source[type]" value="Angular 2 Application Walkthrough"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+
+
+
+"><input type="hidden" name="entries[README.md][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="angular 2"><input type="hidden" name="title" value="Angular 2 Example - Angular 2 Components"><input type="hidden" name="source[type]" value="Angular 2 Components"><input type="hidden" name="source[url]" value="https://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
  * PLUNKER VERSION
  * (based on systemjs.config.js in angular.io)
  * System configuration for Angular 2 samples
