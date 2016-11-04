@@ -1,6 +1,6 @@
 # Angular 2 Services and Http "Try It" Exercise - 15 Minutes
 
-This example shows how Http can be used in services to retrieve 
+This example shows how Http can be used in services to retrieve
 remote data from a server.
 
 ## Steps
@@ -24,5 +24,28 @@ return this.http.get(this.url + 'films')
     this.films = films;
   });
 ```
-6. Press the **Run** button on the Plunker toolbar to try out the application! A list of 
+6. Press the **Run** button on the Plunker toolbar to try out the application! A list of
    Star Wars films should be displayed. Click a movie to get more details about it.
+
+
+   # Angular 2 Data Binding Fundamentals "Try It" Exercise - 15 Minutes
+
+This example provides a look at Angular 2 data binding syntax in templates.
+
+## Bonus
+
+**Use the Async Pipe**
+
+1. Remove the subscribe in the `AppComponent`
+
+2. Set the films property in the `AppComponent` to the return value of  `this.dataService.getFilms()`
+```
+this.films = this.dataService.getFilms();
+```
+
+3. Add the async pipe to the template's *ngFor
+
+```
+*ngFor="let film of films | async"
+```
+

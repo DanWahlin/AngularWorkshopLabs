@@ -13,5 +13,11 @@ This example provides a look at Angular 2 data binding syntax in templates.
 4. Press the Run button.
 
 5. You should see the selected character displayed in the page
-   and should be able to click on a character in the list and see the 
+   and should be able to click on a character in the list and see the
    selected character change.
+
+## Bonus
+
+1. Remove the code that defaults the selectedCharacter in the component
+
+2. Notice how the selected character is no longer displayed in the running app. Make that DIV disappear if there is no selectedCharacter (hint: use *ngIf)
