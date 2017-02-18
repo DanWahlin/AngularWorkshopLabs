@@ -1,5 +1,5 @@
 {
-  "name": "angular2-workshop-labs",
+  "name": "angular-workshop-labs",
   "version": "0.0.1",
   "scripts": {
     "plunk": "gulp build-plunkers",
