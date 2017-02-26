@@ -27,8 +27,7 @@ module.exports = function(config) {
       // Polyfills
       'node_modules/core-js/client/shim.js',
 
-      // Reflect and Zone.js
-      'node_modules/reflect-metadata/Reflect.js',
+      // Zone.js
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/zone.js/dist/async-test.js',
