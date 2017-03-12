@@ -86,8 +86,8 @@ Angular 2 Starter Template"><input type="hidden" name="files[systemjs.config.js]
  */
 (function (global) {
   
-  var ng2Version = '@2.1.2',
-      ng2RouterVersion = '@3.1.2';
+  var ngVersion = '@2.4.9',
+      ngRouterVersion = '@3.4.9';
   
   System.config({
     // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
@@ -110,20 +110,22 @@ Angular 2 Starter Template"><input type="hidden" name="files[systemjs.config.js]
       app: 'app',
 
       // angular bundles
-      '@angular/core': 'npm:@angular/core' + ng2Version + '/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common' + ng2Version + '/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler' + ng2Version + '/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser' + ng2Version + '/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic' + ng2Version + '/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http' + ng2Version + '/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router' + ng2RouterVersion + '/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms' + ng2Version + '/bundles/forms.umd.js',
+      '@angular/core': 'npm:@angular/core' + ngVersion + '/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common' + ngVersion + '/bundles/common.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler' + ngVersion + '/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser' + ngVersion + '/bundles/platform-browser.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic' + ngVersion + '/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http' + ngVersion + '/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router' + ngRouterVersion + '/bundles/router.umd.js',
+      '@angular/forms': 'npm:@angular/forms' + ngVersion + '/bundles/forms.umd.js',
 
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
-      'typescript':                 'npm:typescript@2.0.6/lib/typescript.js',
+      // 'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
+      // 'typescript':                 'npm:typescript@2.0.6/lib/typescript.js',
+      'ts':                         'npm:plugin-typescript@7.0.6/lib/plugin.js',
+      'typescript':                 'npm:typescript@2.2.1/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension
