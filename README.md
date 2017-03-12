@@ -1,4 +1,4 @@
-# Ultimate Angular 2 Workshop Labs
+# Angular and TypeScript Workshop Labs
 
 Please note that this is an "admin" project that isn't intended to be run directly.
 
@@ -17,6 +17,6 @@ Plunker builder adapted from the Google Angular Team's angular.io tools (adaptat
 * Update systemjs.config.js files:
 
 ```
-'ts':                         'npm:plugin-typescript@5.1.2/lib/plugin.js',
-'typescript':                 'npm:typescript@2.0.6/lib/typescript.js',
+'ts':                         'npm:plugin-typescript@7.0.6/lib/plugin.js',
+'typescript':                 'npm:typescript@2.2.1/lib/typescript.js',
 ```
