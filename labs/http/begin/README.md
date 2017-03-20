@@ -1,4 +1,4 @@
-# Angular 2 Services and Http "Try It" Exercise - 15 Minutes
+# Angular Services and Http "Try It" Exercise - 15 Minutes
 
 This example shows how Http can be used in services to retrieve
 remote data from a server.
@@ -28,9 +28,9 @@ return this.http.get(this.url + 'films')
    Star Wars films should be displayed. Click a movie to get more details about it.
 
 
-   # Angular 2 Data Binding Fundamentals "Try It" Exercise - 15 Minutes
+   # Angular Data Binding Fundamentals "Try It" Exercise - 15 Minutes
 
-This example provides a look at Angular 2 data binding syntax in templates.
+This example provides a look at Angular data binding syntax in templates.
 
 ## Bonus
 

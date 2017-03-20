@@ -1,6 +1,6 @@
-# Angular 2 Walk-through "Try It" Exercise - 5 Minutes
+# Angular Walk-through "Try It" Exercise - 5 Minutes
 
-This example walks you through the fundamentals of an Angular 2 application.
+This example walks you through the fundamentals of an Angular application.
 
 ## Exercise Steps
 

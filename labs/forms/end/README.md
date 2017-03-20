@@ -1,6 +1,6 @@
-# Angular 2 Template Form "Try It" Exercise - 15 Minutes
+# Angular Template Form "Try It" Exercise - 15 Minutes
 
-This example provides a look at Angular 2 form templates can be used to capture data.
+This example provides a look at Angular form templates can be used to capture data.
 
 ## Steps
 

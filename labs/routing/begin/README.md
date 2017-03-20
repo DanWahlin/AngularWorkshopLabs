@@ -1,6 +1,6 @@
-# Angular 2 Routing Fundamentals "Try It" Exercise - 15 Minutes
+# Angular Routing Fundamentals "Try It" Exercise - 15 Minutes
 
-This example provides a look at Angular 2 routing and the role it plays loading components.
+This example provides a look at Angular routing and the role it plays loading components.
 
 ## Steps
 

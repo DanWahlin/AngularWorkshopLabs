@@ -1,2 +1,2 @@
-### Angular 2 Example 
+### Angular Example 
 

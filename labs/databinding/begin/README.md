@@ -1,6 +1,6 @@
-# Angular 2 Data Binding Fundamentals "Try It" Exercise - 15 Minutes
+# Angular Data Binding Fundamentals "Try It" Exercise - 15 Minutes
 
-This example provides a look at Angular 2 data binding syntax in templates.
+This example provides a look at Angular data binding syntax in templates.
 
 ## Steps
 

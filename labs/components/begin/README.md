@@ -1,6 +1,6 @@
-# Angular 2 Components "Try It" Exercise - 15 Minutes
+# Angular Components "Try It" Exercise - 15 Minutes
 
-This example walks you through the process of creating Angular 2 Components
+This example walks you through the process of creating Angular Components
 and adding them to a module.
 
 ## Exercise Steps
