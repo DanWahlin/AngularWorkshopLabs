@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
 /*** 
   TODO: Add an @Component decorator that has the following properties:
         
-        selector: 'child-component'
-        template: '<h2>App Component</h2>'
+        selector: 'child-component',
+        template: '<h2>Child Component</h2>'
 
 ***/
 @Component({
