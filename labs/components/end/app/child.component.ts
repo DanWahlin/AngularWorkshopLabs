@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 /*** 
-  TODO: Add an @Component decorator that has the following properties:
+  TODO: Add a @Component decorator that has the following properties:
         
         selector: 'child-component',
         template: '<h2>Child Component</h2>'
