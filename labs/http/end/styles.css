@@ -2,6 +2,10 @@ body {
   margin-left: 10px;
 }
 
+.container {
+  width: 100%;
+}
+
 .row {
   cursor: pointer;
 }
