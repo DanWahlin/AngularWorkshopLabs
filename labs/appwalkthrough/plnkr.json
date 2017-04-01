@@ -2,6 +2,7 @@
   "description": "Angular Application Walkthrough",
   "files":[
     "!**/*.d.ts",
+    "**/systemjs-angular-loader.js",
     "!**/*.js",
     "**/assets/*.js"
   ],
