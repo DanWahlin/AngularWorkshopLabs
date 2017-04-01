@@ -1,8 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "files.exclude": {
-      // "**/app/**/*.js.map": true,
-      // "**/app/**/*.js": true
+      "**/app/**/*.js.map": true,
+      "**/app/**/*.js": true
     }
 ,
 "typescript.check.workspaceVersion": false
