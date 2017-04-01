@@ -10,7 +10,7 @@ Plunker builder adapted from the Google Angular Team's angular.io tools (adaptat
 * Update the following versions in the index.html files in the labs folders:
 
 ```
-<script src="//unpkg.com/zone.js@0.6.26?main=browser"></script>
+<script src="//unpkg.com/zone.js@0.8.4?main=browser"></script>
 <script src="//unpkg.com/systemjs@0.19.40/dist/system.src.js"></script>
 ```
 
