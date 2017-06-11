@@ -118,7 +118,8 @@ class PlunkerBuilder {
     if (altFileName) {
       targetName = altFileName.split('/').pop().slice(0, -5);
     }
-    var target = embedded ? targetName : '_self';
+    //var target = embedded ? targetName : '_self';
+    var target = '_self';
     var html = '<!DOCTYPE html><html lang="en"><body>'
     html += `<form id="mainForm" method="post" action="${this.options.url}" target="${target}">`
 

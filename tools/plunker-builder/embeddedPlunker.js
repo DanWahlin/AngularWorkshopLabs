@@ -9,7 +9,7 @@ function buildPlunkers(basePath, destPath, options) {
 function configureBuilder(options) {
   options.addField = addField;
   options.plunkerFileName = 'eplnkr';
-  options.url = 'https://embed.plnkr.co?show=preview';
+  options.url = 'https://embed.plnkr.co?show=preview&show=readme.md';
   options.writeNoLink = false;
   options.embedded = true;
   options.extraData = extraData;
