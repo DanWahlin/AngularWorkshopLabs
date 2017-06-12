@@ -10,7 +10,7 @@ function configureBuilder(options) {
   options.addField = addField;
   options.plunkerFileName = 'eplnkr';
   //Dan Wahlin edited (added show=readme.md to options.url)
-  options.url = 'https://embed.plnkr.co?show=preview&show=readme.md';
+  options.url = 'http://embed.plnkr.co?show=preview&show=readme.md';
   options.writeNoLink = false;
   //Dan Wahlin edited (changed embedded to false)
   options.embedded = true;
@@ -19,7 +19,7 @@ function configureBuilder(options) {
 
 function extraData(postData, config) {
   postData['source[type]'] = config.description || 'Angular example';
-  postData['source[url]'] = 'https://angular.io'
+  postData['source[url]'] = 'http://angular.io'
 }
 
 function addField(postData, name, content) {
