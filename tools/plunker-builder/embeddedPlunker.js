@@ -13,7 +13,7 @@ function configureBuilder(options) {
   options.url = 'https://embed.plnkr.co?show=preview&show=readme.md';
   options.writeNoLink = false;
   //Dan Wahlin edited (changed embedded to false)
-  options.embedded = false;
+  options.embedded = true;
   options.extraData = extraData;
 }
 
