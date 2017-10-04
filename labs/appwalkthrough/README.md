@@ -15,7 +15,7 @@ This example walks you through the fundamentals of an Angular application.
      selector for the component.
    * A component class is defined that includes a constructor and an ngOnInit() function.
 
-4. Click on the "Run" button on the top Plunker bar to run the 
+4. Click on the "Run" button on the top Plunker bar (in the upper-right corner) to run the 
    application - be amazed at the magnificence of it all. :-)
 
 
