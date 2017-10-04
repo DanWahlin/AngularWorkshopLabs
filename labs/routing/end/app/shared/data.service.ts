@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'; 
@@ -12,18 +12,17 @@ export class DataService {
     
     _baseUrl: string = '';
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
     
     getCustomers() : Observable<ICustomer[]> {        
         return this.http.get(this._baseUrl + 'customers.json')
-                    .map((res: Response) => res.json())
+                    .map(customers => customers)
                     .catch(this.handleError);
     }
 
     getOrders(id: number) : Observable<IOrder[]> {
         return this.http.get(this._baseUrl + 'orders.json')
-                    .map((res: Response) => {
-                        const orders = res.json();
+                    .map(orders => {
                         return orders.filter((order: IOrder) => order.customerId === id);
                     })
                     .catch(this.handleError);               
