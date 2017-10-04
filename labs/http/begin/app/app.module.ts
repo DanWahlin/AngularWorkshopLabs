@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-//*** TODO: Import HttpModule from @angular/http
+//*** TODO: Import HttpClientModule from @angular/common/http
 
 
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
- //*** TODO: Add the imported HttpModule object to the imports 
+ //*** TODO: Add the imported HttpClientModule object to the imports 
   imports:      [ BrowserModule, FormsModule ],
 
   declarations: [ AppComponent ],

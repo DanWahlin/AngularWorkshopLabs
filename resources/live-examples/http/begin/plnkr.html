@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-//*** TODO: Import HttpModule from @angular/http
+//*** TODO: Import HttpClientModule from @angular/common/http
 
 
 
@@ -37,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
- //*** TODO: Add the imported HttpModule object to the imports 
+ //*** TODO: Add the imported HttpClientModule object to the imports 
   imports:      [ BrowserModule, FormsModule ],
 
   declarations: [ AppComponent ],
@@ -244,13 +244,13 @@ remote data from a server.
 2. Open **app/data.service.ts** and complete the TODO tasks.
 3. Add the following code into the **getFilms()** function in data.services.ts:
 ```
-return this.http.get(this.url + 'films')
-           .map((response: Response) => {
-                let films = response.json().results;
-                this.sorter.sort(films, 'episode_id');
-                return films;
-             })
-           .catch(this.handleError);
+    return this.http.get(this.url + 'films')
+               .map(data => {
+                    let films = data['results'];
+                    this.sorter.sort(films, 'episode_id');
+                    return films;
+                 })
+               .catch(this.handleError);
 ```
 4. Open **app/app.component.ts** and complete the TODO tasks.
 5. To subscribe to the Observable returned from DataService's getFilms() function add the following code in ngOnInit():
@@ -259,13 +259,9 @@ return this.http.get(this.url + 'films')
     this.films = films;
   });
 ```
-6. Press the **Run** button on the Plunker toolbar to try out the application! A list of
+6. Press the **Run** button (in the upper-right corner) on the Plunker toolbar to try out the application! A list of
    Star Wars films should be displayed. Click a movie to get more details about it.
 
-
-   # Angular Data Binding Fundamentals &quot;Try It&quot; Exercise - 15 Minutes
-
-This example provides a look at Angular data binding syntax in templates.
 
 ## Bonus
 
@@ -283,7 +279,6 @@ this.films = this.dataService.getFilms();
 ```
 *ngFor=&quot;let film of films | async&quot;
 ```
-
 "><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="observables"><input type="hidden" name="tags[4]" value="rxjx"><input type="hidden" name="tags[5]" value="Angular"><input type="hidden" name="private" value="true"><input type="hidden" name="description" value="Angular Example - Angular Http and Observables Lab"><input type="hidden" name="files[systemjs.config.js]" value="/**
  * WEB ANGULAR VERSION
  * (based on systemjs.config.js in angular.io)
