@@ -16,3 +16,10 @@ This example provides a look at Angular routing and the role it plays loading co
 
 6. You should see different customers displayed. Click on a customer's
    "View Orders" link to navigate to the orders route.    
+
+## Bonus (if time permits)
+
+**Convert to a Routing Module**
+
+1. Convert app/app.routing.ts to a routing module.
+2. Import the new routing module into app/app.module.ts.
