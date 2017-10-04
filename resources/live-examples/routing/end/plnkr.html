@@ -110,14 +110,14 @@ export class DataService {
     constructor(private http: HttpClient) { }
     
     getCustomers() : Observable<ICustomer[]> {        
-        return this.http.get(this._baseUrl + 'customers.json')
-                    .map(customers => customers)
+        return this.http.get<ICustomer[]>(this._baseUrl + 'customers.json')
+                    .map((customers: ICustomer[]) => customers)
                     .catch(this.handleError);
     }
 
     getOrders(id: number) : Observable<IOrder[]> {
-        return this.http.get(this._baseUrl + 'orders.json')
-                    .map(orders => {
+        return this.http.get<IOrder[]>(this._baseUrl + 'orders.json')
+                    .map((orders: IOrder[]) => {
                         return orders.filter((order: IOrder) => order.customerId === id);
                     })
                     .catch(this.handleError);               
