@@ -155,7 +155,13 @@ This example provides a look at Angular data binding syntax in templates.
 1. Remove the code that defaults the selectedCharacter in the component
 
 2. Notice how the selected character is no longer displayed in the running app. Make that DIV disappear if there is no selectedCharacter (hint: use *ngIf)
-"><input type="hidden" name="entries[README.md][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="observables"><input type="hidden" name="tags[4]" value="rxjx"><input type="hidden" name="tags[5]" value="Angular"><input type="hidden" name="title" value="Angular Example - Angular Data Binding Lab"><input type="hidden" name="source[type]" value="Angular Data Binding Lab"><input type="hidden" name="source[url]" value="http://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="(function (global) {
+"><input type="hidden" name="entries[README.md][encoding]" value="utf8"><input type="hidden" name="tags[0]" value="angular2"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="observables"><input type="hidden" name="tags[4]" value="rxjx"><input type="hidden" name="tags[5]" value="Angular"><input type="hidden" name="title" value="Angular Example - Angular Data Binding Lab"><input type="hidden" name="source[type]" value="Angular Data Binding Lab"><input type="hidden" name="source[url]" value="http://angular.io"><input type="hidden" name="entries[systemjs.config.js][content]" value="/**
+ * WEB ANGULAR VERSION
+ * (based on systemjs.config.js in angular.io)
+ * System configuration for Angular samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
   System.config({
     // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
     transpiler: 'ts',
@@ -190,6 +196,7 @@ This example provides a look at Angular data binding syntax in templates.
       '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
       '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
       '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
@@ -203,9 +210,10 @@ This example provides a look at Angular data binding syntax in templates.
 
       // other libraries
       'rxjs':                      'npm:rxjs@5.0.1',
+      'tslib':                     'npm:tslib/tslib.js',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'ts':                        'npm:plugin-typescript@5.2.7/lib/plugin.js',
-      'typescript':                'npm:typescript@2.2.1/lib/typescript.js',
+      'typescript':                'npm:typescript@2.3.2/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension
@@ -225,7 +233,14 @@ This example provides a look at Angular data binding syntax in templates.
     }
   });
 
-})(this);"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[tsconfig.json][content]" value="{
+})(this);
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+"><input type="hidden" name="entries[systemjs.config.js][encoding]" value="utf8"><input type="hidden" name="entries[tsconfig.json][content]" value="{
   &quot;compilerOptions&quot;: {
     &quot;target&quot;: &quot;es5&quot;,
     &quot;module&quot;: &quot;commonjs&quot;,
@@ -243,6 +258,8 @@ var stylesRegex = /styleUrls *:(\s*\[[^\]]*?\])/g;
 var stringRegex = /(['`&quot;])((?:[^\\]\\\1|.)*?)\1/g;
 
 module.exports.translate = function(load){
+  if (load.source.indexOf('moduleId') != -1) return load;
+
   var url = document.createElement('a');
   url.href = load.address;
 
@@ -255,11 +272,13 @@ module.exports.translate = function(load){
   baseHref.href = this.baseURL;
   baseHref = baseHref.pathname;
 
-  basePath = basePath.replace(baseHref, '');
+  if (!baseHref.startsWith('/base/')) { // it is not karma
+    basePath = basePath.replace(baseHref, '');
+  }
 
   load.source = load.source
     .replace(templateUrlRegex, function(match, quote, url){
-      let resolvedUrl = url;
+      var resolvedUrl = url;
 
       if (url.startsWith('.')) {
         resolvedUrl = basePath + url.substr(1);

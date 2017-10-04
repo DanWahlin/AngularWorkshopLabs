@@ -7,28 +7,24 @@
   // map tells the System loader where to look for things
   var map = {
     'app': 'app', // 'dist',
-    'main': 'main.js',
-
     '@angular': 'node_modules/@angular',
     'rxjs': 'node_modules/rxjs'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app': { main: 'main.js', defaultExtension: 'js' },
-    'api': { defaultExtension: 'js' },
-    'rxjs': { defaultExtension: 'js' }
+    'app': { 
+      main: 'main.js',  
+      defaultExtension: 'js',
+      meta: {
+        './*.js': {
+          loader: 'systemjs-angular-loader.js'
+        }
+      }
+    },
+    'rxjs':                 { defaultExtension: 'js' },
+    '@angular/common/http': { main: '../bundles/common-http.umd.js', defaultExtension: 'js' }
   };
-
-  var barrels = [
-    // App specific barrels.
-    'app/core',
-    'app/models',
-  ];
-
-  barrels.forEach((barrelName) => {
-    packages[barrelName] = { main: 'index' };
-  });
 
   var ngPackageNames = [
     'common',
