@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule} from '@angular/http';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent }  from './app.component';
 import { CustomersComponent } from './customers/customers.component';
@@ -12,7 +12,7 @@ import { DataService } from './shared/data.service';
 
 //*** TODO: Add the app_routing object into into the imports array
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
   declarations: [ AppComponent, CustomersComponent, OrdersComponent ],
   providers:    [ DataService ],
   bootstrap:    [ AppComponent ]
