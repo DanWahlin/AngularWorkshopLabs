@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-//*** TODO: Import the Http and Response objects from the Angular Http module
+//*** TODO: Import the HttpClient and HttpErrorResponse objects from the Angular Http module
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -14,7 +14,7 @@ export class DataService {
   
   url: string = 'https://swapi.co/api/';
   
-  //*** TODO: Inject the Http and Sorter services into the constructor 
+  //*** TODO: Inject the HttpClient and Sorter services into the constructor 
   //***       (name the parameters "http" and "sorter" and make them private)
   constructor(private http: HttpClient, private sorter: Sorter) { }
   
@@ -39,6 +39,6 @@ export class DataService {
       //return Observable.throw(err.text() || 'backend server error');
     }
     return Observable.throw(error || 'Server error');
-}
+  }
   
 }

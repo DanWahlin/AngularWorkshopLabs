@@ -39,7 +39,7 @@ import { Sorter } from './sorter';
 })
 export class AppModule { }"><input type="hidden" name="entries[app/app.module.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/data.service.ts][content]" value="import { Injectable } from '@angular/core';
 
-//*** TODO: Import the Http and Response objects from the Angular Http module
+//*** TODO: Import the HttpClient and HttpErrorResponse objects from the Angular Http module
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -53,7 +53,7 @@ export class DataService {
   
   url: string = 'https://swapi.co/api/';
   
-  //*** TODO: Inject the Http and Sorter services into the constructor 
+  //*** TODO: Inject the HttpClient and Sorter services into the constructor 
   //***       (name the parameters &quot;http&quot; and &quot;sorter&quot; and make them private)
   constructor(private http: HttpClient, private sorter: Sorter) { }
   
@@ -78,7 +78,7 @@ export class DataService {
       //return Observable.throw(err.text() || 'backend server error');
     }
     return Observable.throw(error || 'Server error');
-}
+  }
   
 }"><input type="hidden" name="entries[app/data.service.ts][encoding]" value="utf8"><input type="hidden" name="entries[app/main.ts][content]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
