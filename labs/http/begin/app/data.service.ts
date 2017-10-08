@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-//*** TODO: Import the HttpClient and HttpErrorResponse objects from the @angular/http module
+//*** TODO: Import the HttpClient and HttpErrorResponse objects 
+// from the @angular/common/http module
 
 
 import { Observable } from 'rxjs/Observable';
