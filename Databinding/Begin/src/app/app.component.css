@@ -1,0 +1,7 @@
+.selectedCharacter {
+    color: #fff;
+}
+
+.character {
+    cursor: pointer;
+}

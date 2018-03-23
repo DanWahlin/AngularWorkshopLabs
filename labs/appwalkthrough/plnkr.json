@@ -1,9 +1,0 @@
-{
-  "description": "Angular Application Walkthrough",
-  "files":[
-    "!**/*.d.ts",
-    "!**/*.js",
-    "**/assets/*.js"
-  ],
-  "tags": ["angular"]
-}

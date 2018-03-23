@@ -1,0 +1,38 @@
+<!-- 
+  TODO: Write out the filmTitle inside of the h1 tag below
+-->
+<h1>{{ filmTitle }}</h1>
+<br />
+<h4>Film Characters</h4>
+<!-- 
+  TODO: 
+  1. Use *ngFor to render all of the characters in the ul below. The character
+     name should be written out in the <li></li> tag.
+  2. As each li is clicked set the selectedCharacter property in the component to the clicked character 
+     object using event binding syntax (eventTarget)="expression"
+-->
+<ul>
+  <li *ngFor="let character of characters" (click)="selectedCharacter = character" class="character">
+    {{character.name}}
+  </li>
+</ul>
+<br />
+
+<!-- 
+  TODO: 
+  1. Write out the currentCharacter name inside of the div tag below
+  2. Set the div's background to the selectedCharacter's theme value using property binding
+     (hint: Use style.background)
+-->
+<h4>Selected Character</h4>
+<div [style.background]="selectedCharacter.theme" class="selectedCharacter">
+  {{ selectedCharacter.name }}
+</div>
+
+<br />
+<!-- 
+  TODO: 
+  1. Write out "Film Title has X number of characters in it" below. 
+     Substitute the actual filmTitle and characters.length values in the output
+-->
+{{ filmTitle }} has {{ characters.length }} characters in it.

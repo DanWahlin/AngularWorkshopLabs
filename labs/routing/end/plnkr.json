@@ -1,9 +1,0 @@
-{
-  "description": "Angular Routing Lab Solution",
-  "files":[
-    "!**/*.d.ts",
-    "!**/*.js",
-    "**/assets/*.js"
-  ],
-  "tags": ["http", "observables", "rxjx", "Angular", "routing"]
-}

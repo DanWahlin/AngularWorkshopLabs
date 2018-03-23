@@ -1,9 +1,0 @@
-{
-  "description": "Angular Http and Observables Lab",
-  "files":[
-    "!**/*.d.ts",
-    "!**/*.js",
-    "**/assets/*.js"
-  ],
-  "tags": ["http", "observables", "rxjx", "Angular"]
-}

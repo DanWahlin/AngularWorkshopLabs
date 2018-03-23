@@ -1,9 +1,0 @@
-{
-  "description": "Angular Data Binding Lab",
-  "files":[
-    "!**/*.d.ts",
-    "!**/*.js",
-    "**/assets/*.js"
-  ],
-  "tags": ["http", "observables", "rxjx", "Angular"]
-}
