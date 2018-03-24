@@ -19,13 +19,13 @@
                         <div class="pull-left card-body-right">
                             <div class="card-body-content">{{customer.city }}, {{customer.state.name}}</div>
 
-                            <!-- 
-                                TODO: Bind the routerLink directive to the anchor tag below
-                                      using [] property binding syntax. Assign it a value of ['/orders', customer.id]. 
-                                      
-                                      This will allow the end user to navigate to the "orders" 
-                                      route and pass the customer id to it as a route parameter.
-                            -->
+<!-- 
+    TODO: Bind the routerLink directive to the anchor tag below
+            using [] property binding syntax. Assign it a value of ['/orders', customer.id]. 
+            
+            This will allow the end user to navigate to the "orders" 
+            route and pass the customer id to it as a route parameter.
+-->
                             <a [routerLink]="['/orders',customer.id]">View Orders</a>
                         </div>
                     </div>

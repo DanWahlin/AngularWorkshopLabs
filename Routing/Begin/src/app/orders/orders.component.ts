@@ -22,7 +22,7 @@ export class OrdersComponent implements OnInit {
     ngOnInit() { 
         /***
             TODO: 1. Grab the customerId route parameter value using
-                     this.route.snapshot.params['customerId'] 
+                     this.route.snapshot.paramMap.get('customerId')
 
                   2. Convert the route parameter value to an integer 
                      and assign it to the id constant below.

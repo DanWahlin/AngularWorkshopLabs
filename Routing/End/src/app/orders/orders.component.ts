@@ -22,12 +22,12 @@ export class OrdersComponent implements OnInit {
     ngOnInit() { 
         /***
             TODO: 1. Grab the customerId route parameter value using
-                     this.route.snapshot.params['customerId'] 
+                     this.route.snapshot.paramMap.get('customerId')
 
                   2. Convert the route parameter value to an integer 
                      and assign it to the id constant below.
         ***/
-        const id = +this.route.snapshot.params['customerId'];
+        const id = +this.route.snapshot.paramMap.get('customerId');
         this.dataService.getOrders(id)
             .subscribe((orders: IOrder[]) => {
                 this.orders = orders;
