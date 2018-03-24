@@ -1,4 +1,4 @@
-# Angular Data Binding Fundamentals Lab - 15 Minutes
+# Angular Data Binding Lab - 15 Minutes
 
 This example provides a look at Angular data binding syntax in templates.
 

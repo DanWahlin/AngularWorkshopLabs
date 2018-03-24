@@ -1,4 +1,4 @@
-# Angular Routing Fundamentals Lab - 15 Minutes
+# Angular Routing Lab - 15 Minutes
 
 This example provides a look at Angular routing and the role it plays loading components.
 
