@@ -4,7 +4,7 @@
 /*** 
   TODO: Add an @Component decorator that has the following properties:
         
-        selector: 'app-component',
+        selector: 'app-root',
         template: `<h1>App Component</h1><br />`
 
 ***/
