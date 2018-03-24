@@ -6,7 +6,7 @@
   TODO: Add a @Component decorator that has the following properties:
         
         selector: 'child-component',
-        template: '<h2>Child Component</h2>'
+        template: `<h2>Child Component</h2>`
 
 ***/
 
