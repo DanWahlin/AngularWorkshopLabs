@@ -38,7 +38,7 @@ this.dataService.getFilms().subscribe((films) => {
 
 1. Remove the subscribe function call in `AppComponent`
 
-2. Set the films property in `AppComponent` to the following value:
+2. Set the films property in `AppComponent` to the following value (feel free to rename films to films$ if you'd like):
 
 ```
 this.films = this.dataService.getFilms();
@@ -48,5 +48,11 @@ this.films = this.dataService.getFilms();
 
 ```
 *ngFor="let film of films | async"
+```
+
+4. Convert the *ngIf directives to use the async pipe. Here's a hint:
+
+```
+*ngIf="(films$ | async).length"
 ```
 
