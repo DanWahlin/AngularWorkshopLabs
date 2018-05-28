@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 //*** TODO: Import the HttpClient and HttpErrorResponse objects from the Angular Http module
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, catchError} from 'rxjs/operators'; 
 
 import { Sorter } from './sorter';
