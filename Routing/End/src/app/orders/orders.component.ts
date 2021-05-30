@@ -11,7 +11,7 @@ import { IOrder } from '../shared/interfaces';
 })
 export class OrdersComponent implements OnInit {
 
-    orders: IOrder[];
+    orders: IOrder[] = [];
     
     /*** 
         TODO: Inject ActivatedRoute into the constructor. 
@@ -21,13 +21,10 @@ export class OrdersComponent implements OnInit {
 
     ngOnInit() { 
         /***
-            TODO: 1. Grab the customerId route parameter value using
-                     this.route.snapshot.paramMap.get('customerId')
-
-                  2. Convert the route parameter value to an integer 
-                     and assign it to the id constant below.
+            TODO: 1. Grab the customerId route parameter value and assign it to id using
+                     Number(this.route.snapshot.paramMap.get('customerId'));
         ***/
-        const id = +this.route.snapshot.paramMap.get('customerId');
+        const id = Number(this.route.snapshot.paramMap.get('customerId'));
         this.dataService.getOrders(id)
             .subscribe((orders: IOrder[]) => {
                 this.orders = orders;

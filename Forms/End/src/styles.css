@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+form {
+	width:50%;
+}
+
+.row {
+  padding: 10px;
+}
+
+.logo {
+	height: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+input.ng-invalid, select.ng-invalid {
+  border-left: 5px solid #a94442;
+}
+
+input.ng-valid, select.ng-valid {
+  border-left: 5px solid #42A948;
+}
+
+/* Bootstrap overrides */
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}

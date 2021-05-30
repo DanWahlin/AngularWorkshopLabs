@@ -11,7 +11,7 @@ import { Sorter } from './sorter';
 @Injectable()
 export class DataService {
   
-  url: string = 'https://swapi.co/api/';
+  url: string = 'https://swapi.dev/api/';
   
   //*** TODO: Inject the HttpClient and Sorter services into the constructor 
   //***       (name the parameters "http" and "sorter" and make them private)
@@ -22,7 +22,7 @@ export class DataService {
     //***       (see the README for the code to use here)
     return this.http.get(this.url + 'films')
       .pipe(
-        map(data => {
+        map((data: any) => {
             let films = data['results'];
             this.sorter.sort(films, 'episode_id');
             return films;
