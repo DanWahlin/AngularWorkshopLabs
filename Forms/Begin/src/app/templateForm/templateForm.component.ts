@@ -7,9 +7,9 @@ import { Customer } from '../shared/customer';
   templateUrl: './templateForm.component.html'
 })
 export class TemplateFormComponent implements OnInit {
-  model: Customer;  
-  states: string[];
-  submitted: boolean = false;
+  model: Customer = {};  
+  states: string[] = [];
+  submitted = false;
   
   constructor() { }
   
