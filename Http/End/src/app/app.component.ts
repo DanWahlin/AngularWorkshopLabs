@@ -9,8 +9,8 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit {
   
-  films: any[];  
-  selectedFilm: any;
+  films: any[] = [];  
+  selectedFilm: any = null;
   
   //*** TODO: Inject DataService (name the parameter dataService and make it private)
   constructor(private dataService: DataService) {  }

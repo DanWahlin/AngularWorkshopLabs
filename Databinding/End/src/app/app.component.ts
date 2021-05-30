@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   
-  filmTitle: string;        //Title of the film
-  characters: any[];        //A string array
-  selectedCharacter: any;   //A character from the heroes array
+  filmTitle: string = '';        //Title of the film
+  characters: any[] = [];        //A string array
+  selectedCharacter: any = null; //A character from the heroes array
   
   constructor() {  }
   
