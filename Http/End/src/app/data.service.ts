@@ -11,7 +11,7 @@ import { Sorter } from './sorter';
 @Injectable()
 export class DataService {
   
-  url: string = 'https://swapi.dev/api/';
+  url = 'https://swapi.dev/api/';
   
   //*** TODO: Inject the HttpClient and Sorter services into the constructor 
   //***       (name the parameters "http" and "sorter" and make them private)
