@@ -20,7 +20,7 @@ export class DataService {
   getFilms() {
     //*** TODO: Use the Http get() function to retrieve films 
     //***       (see the README for the code to use here)
-    return this.http.get(this.url + 'films')
+    return this.http.get(this.url + 'films/')
       .pipe(
         map((data: any) => {
             let films = data['results'];
