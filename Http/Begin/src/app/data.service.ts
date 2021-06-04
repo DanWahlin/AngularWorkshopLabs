@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 //          from the @angular/common/http module
 
 
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators'; 
 
 import { Sorter } from './sorter';
@@ -30,9 +30,9 @@ export class DataService {
     console.error('server error:', error); 
     if (error.error instanceof Error) {
       let errMessage = error.error.message;
-      return Observable.throw(errMessage);
+      return throwError(errMessage);
     }
-    return Observable.throw(error || 'Server error');
+    return throwError(error || 'Server error');
   }
   
 }
