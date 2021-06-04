@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 //          from the @angular/common/http module
 
 
-import { Observable, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 import { map, catchError} from 'rxjs/operators'; 
 
 import { Sorter } from './sorter';
